@@ -1,3 +1,5 @@
+package Conditions_Loops;
+
 public class Conditions {
     public static void main(String[] args) {
         /*
