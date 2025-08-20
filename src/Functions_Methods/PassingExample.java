@@ -1,0 +1,11 @@
+package Functions_Methods;
+
+public class PassingExample {
+    public static void main(String[] args) {
+        String chacha = "Iron Main";
+        greet(chacha);
+    }
+    static  void greet(String naam){
+        System.out.println(naam);
+    }
+}
