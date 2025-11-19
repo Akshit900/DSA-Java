@@ -1,0 +1,63 @@
+package BinarySearch;
+import java.util.*;
+
+public class AggressiveCows {
+
+    // Check if we can place 'cows' cows such that
+    // the minimum distance between any two cows is at least 'dist'
+    private static boolean canPlace(int[] stalls, int cows, int dist) {
+        int count = 1;                // place first cow at stalls[0]
+        int lastPos = stalls[0];
+
+        for (int i = 1; i < stalls.length; i++) {
+            if (stalls[i] - lastPos >= dist) {
+                count++;
+                lastPos = stalls[i];
+                if (count >= cows) {  // all cows placed successfully
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    // Returns the maximum possible minimum distance
+    public static int maxMinDistance(int[] stalls, int cows) {
+        Arrays.sort(stalls);  // make sure stalls are sorted
+
+        int low = 1;
+        int high = stalls[stalls.length - 1] - stalls[0];
+        int ans = 0;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;  // candidate distance
+
+            if (canPlace(stalls, cows, mid)) {
+                ans = mid;         // mid is possible, try for a larger distance
+                low = mid + 1;
+            } else {
+                high = mid - 1;    // mid not possible, try smaller distance
+            }
+        }
+        return ans;
+    }
+
+    // Example usage
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Example input:
+        // 5 3
+        // 1 2 8 4 9
+        int n = sc.nextInt();
+        int c = sc.nextInt();
+        int[] stalls = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            stalls[i] = sc.nextInt();
+        }
+
+        int result = maxMinDistance(stalls, c);
+        System.out.println(result);
+    }
+}
