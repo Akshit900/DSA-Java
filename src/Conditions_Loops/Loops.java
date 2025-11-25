@@ -21,7 +21,7 @@ public class Loops {
         int n = sc.nextInt();
 
 //        for(int i = 1; i <= n; i++){
-////            System.out.println(i + " ");
+//            System.out.println(i + " ");
 //            System.out.println("Hello India!");
 //        }
 
