@@ -1,7 +1,7 @@
 package Switch_Nested;
 
 import java.util.Scanner;
-
+//Number Pyramid Question
 public class NumberPyramid {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
