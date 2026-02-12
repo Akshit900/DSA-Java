@@ -1,5 +1,7 @@
 package StartingBasics;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         String a = "John";
@@ -10,5 +12,7 @@ public class Main {
         String name1 = new String("John");
         String name2 = new String("John");
         System.out.println(name1.equals(name2));
+
+        System.out.println(Arrays.toString(new int[] {1, 2, 3, 4, 5, 6}));
     }
 }
