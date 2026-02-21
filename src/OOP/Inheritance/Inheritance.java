@@ -1,4 +1,4 @@
-package OOP;
+package OOP.Inheritance;
 // Parent class
 class Animal {
 
