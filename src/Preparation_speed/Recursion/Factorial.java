@@ -1,0 +1,14 @@
+package Preparation_speed.Recursion;
+
+public class Factorial {
+    static int factorial(int n){
+        if(n == 0) return 1;
+//        int smallAns = factorial(n-1);
+//        int ans = n * smallAns;
+        return n * factorial(n-1);
+    }
+    public static void main(String[] args) {
+        System.out.print(factorial(5));
+
+    }
+}
